@@ -75,7 +75,9 @@ String listSdCardRootFolderAsHtmlTableData()
         }
 
         String fileName = fileEntry.name();
-        fileName.remove(0, 1); // remove trailing slash
+        if (fileName[0] == '/') {
+            fileName.remove(0, 1); // remove trailing slash
+        }
         String fileEntryData = "";
         if (fileEntry.isDirectory())
         {
